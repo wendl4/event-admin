@@ -23,11 +23,135 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: 'Nexa bold';
+  src: url('../assets/fonts/Nexa-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Nexa light';
+  src: url('../assets/fonts/Nexa-Light.otf');
+}
+
+.App-nexabold {
+  font-family: 'Nexa bold';
+}
+
+.App-nexalight {
+  font-family: 'Nexa light';
+}
+
+.leftArrow {
+  left:0px;
+  width: 30px;
+  height: 60px;
+  display: inline-block;
+  margin: 10px;
+  margin-top: 40px;
+  position: absolute;
+}
+
+.leftArrow:hover {
+  transform: scale(1.3, 1.3);
+}
+
+.rightArrow {
+  right: 0px;
+  width: 30px;
+  height: 60px;
+  display: inline-block;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  margin: 10px;
+  margin-top: 40px;
+  position: absolute;
+}
+
+.rightArrow:hover {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scale(-1.3, 1.3);
+}
+
+.App-heading {
+  font-size: 60pt;
+  color: #1d3557;
+}
+
+.carousel {
+  display: inline-block;
+  position: relative;
+}
+
+.datePickerElement {
+  background-color: #cb1523;
+  border-radius: 30px;
+  padding: 10px;
+  margin-top: 40px;
+  font-family: 'Nexa bold';
+  font-size: 20px;
+  width: 300px;
+}
+
+.dayDetailItem {
+  margin: 5%;
+  font-family: 'Nexa bold';
+  width: 50%;
+  background-color: #FFF;
+  padding: 35px;
+  margin: auto;
+}
+
+.dayDetail {
+  margin: 5%;
+  text-align: left;
+}
+
+h3 {
+  color: #55acb2;
+  font-size: 30px;
+}
+
+.label {
+  color: #457b9d;
+}
+
+.eventDate {
+  font-size: 25px;
+}
+
+.eventTime {
+  font-size: 25px;
+  padding-left: 15%;
+}
+
+.eventNote {
+  font-size: 25px;
+  padding-top: 30px;
+}
+
+.detailIcon {
+  position: relative;
+  float: right;
+  top: -100px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+.noteInput {
+  width: 100%;
+  height: 100px; 
+}
+
+.formInput {
+  text-align: center;
+  margin:10px;
+}
+
+.addButton {
+  cursor: pointer;
+  margin: 30px;
 }

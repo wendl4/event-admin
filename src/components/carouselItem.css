@@ -1,0 +1,317 @@
+.carouselDiv {
+    color: #a8dadc;
+    background-color: #ffffff;
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 5px;
+    opacity: 0.75;
+    vertical-align: top;
+}
+
+.blurred {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.carouselHeading {
+    color: #ffffff;
+    background-color: #e63946;
+    font-size: 18px;
+    font-family: 'Nexa bold';
+    border-radius: 5px 5px 0px 0px;
+    padding: 7px;
+}
+
+.carouselBody {
+    font-weight: bold;
+    padding-top: 5px;
+
+}
+
+.carouselMain {
+    color: #a8dadc;
+    background-color: #ffffff;
+    width: 300px;
+    height: 150px;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.carouselMain.leftAnimated {
+    -webkit-animation-name: shrinkLeft; 
+    -webkit-animation-duration: 2s;
+    animation-name: shrinkLeft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shrinkLeft {
+    to {
+        height: 100px;
+        width: 200px;
+        opacity: 0.75;
+        transform: translate(-240px);
+    }
+}
+
+@-webkit-keyframes shrinkLeft {
+    to {
+        height: 100px;
+        width: 200px;
+        opacity: 0.75;
+        -webkit-transform: translate(-240px);
+    }
+}
+
+.carouselMain.rightAnimated {
+    -webkit-animation-name: shrinkRight; 
+    -webkit-animation-duration: 2s;
+    animation-name: shrinkRight;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shrinkRight {
+    to {
+        height: 100px;
+        width: 200px;
+        opacity: 0.75;
+        transform: translate(240px);
+    }
+}
+
+@-webkit-keyframes shrinkRight {
+    to {
+        height: 100px;
+        width: 200px;
+        opacity: 0.75;
+        -webkit-transform: translate(240px);
+    }
+}
+
+
+.mainFromRight.carouselDiv {
+    -webkit-animation-name: mainRight; 
+    -webkit-animation-duration: 2s;
+    animation-name: mainRight;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mainRight {
+    to {
+        height: 150px;
+        width: 300px;
+        opacity: 1;
+        transform: translate(-240px);
+    }
+}
+
+@-webkit-keyframes mainRight {
+    to {
+        height: 150px;
+        width: 300px;
+        opacity: 1;
+        -webkit-transform: translate(240px);
+    }
+}
+
+.mainFromLeft.carouselDiv {
+    -webkit-animation-name: mainLeft; 
+    -webkit-animation-duration: 2s;
+    animation-name: mainLeft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mainLeft {  
+    to {
+        height: 150px;
+        width: 300px;
+        opacity: 1;
+        transform: translate(240px);
+    }
+}
+
+@-webkit-keyframes mainLeft {
+    to {
+        height: 150px;
+        width: 300px;
+        opacity: 1;
+        -webkit-transform: translate(240px);
+    }
+}
+
+.leftAnimated {
+    -webkit-animation-name: moveLeft;
+    -webkit-animation-duration: 2s;
+    animation-name: moveLeft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translate(0);
+      }
+      to {
+        transform: translate(-240px);
+      }
+}
+
+@-webkit-keyframes moveLeft {
+    from {
+      -webkit-transform: translate(0);
+    }
+    to {
+      -webkit-transform: translate(-240px);
+    }
+}
+
+.rightAnimated {
+    -webkit-animation-name: moveRight;
+    -webkit-animation-duration: 2s;
+    animation-name: moveRight;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveRight {
+    to {
+        transform: translate(240px);
+    }
+}
+
+@-webkit-keyframes moveRight {
+    to {
+        -webkit-transform: translate(240px);
+    }
+}
+
+.leftLastItem {
+    -webkit-animation-name: dissapearLeft;
+    -webkit-animation-duration: 4s;
+    animation-name: dissapearLeft;
+    animation-duration: 4s;
+}
+
+@keyframes dissapearLeft {
+    to {
+        transform: scale(0.1);
+    }  
+}
+
+@-webkit-keyframes dissapearLeft {
+    to {
+        -webkit-transform: scale(0.1);
+    }  
+}
+
+.hiddenElement {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transform: scale(0);
+}
+
+@media not all and (min-resolution:.001dpcm) { @media
+    {
+        .hiddenElement { 
+            left: -100%;
+        }
+    }}
+
+.hiddenElement.growRight {
+    -webkit-animation-name: growFromRight;
+    -webkit-animation-duration: 2s;
+    animation-name: growFromRight;
+    animation-duration: 2s;
+}
+
+@keyframes growFromRight {
+    to {
+        visibility: visible;
+        opacity: 0.75;
+        transform: scale(1) translate(-240px);
+    }
+}
+
+@-webkit-keyframes growFromRight {
+    to {
+        visibility: visible;
+        opacity: 0.75;
+        -webkit-transform: scale(1) translate(-240px);
+    }
+}
+
+.hiddenElement.growLeft {
+    -webkit-animation-name: growFromLeft;
+    -webkit-animation-duration: 2s;
+    animation-name: growFromLeft;
+    animation-duration: 2s;
+}
+
+@keyframes growFromLeft {
+    to {
+        visibility: visible;
+        opacity: 0.75;
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes growFromLeft {
+    to {
+        visibility: visible;
+        opacity: 0.75;
+        -webkit-transform: scale(1);
+    }
+}
+
+.hideFirst {
+    -webkit-animation-name: fadeToLeft;
+    -webkit-animation-duration: 2s;
+    animation-name: fadeToLeft;
+    animation-duration: 2s;
+}
+
+@keyframes fadeToLeft {
+    to {
+        visibility: hidden;
+        transform: translate(-240px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeToLeft {
+    to {
+        visibility: hidden;
+        -webkit-transform: translate(-240px);
+        opacity: 0;
+    }
+}
+
+.hideLast {
+    -webkit-animation-name: fadeToRight;
+    -webkit-animation-duration: 2s;
+    animation-name: fadeToRight;
+    animation-duration: 2s;
+}
+
+@keyframes fadeToRight {
+    to {
+        visibility: hidden;
+        transform: translate(240px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeToRight {
+    to {
+        visibility: hidden;
+        -webkit-transform: translate(240px);
+        opacity: 0;
+    }
+}
