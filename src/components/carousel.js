@@ -5,6 +5,7 @@ import arrow from '../assets/images/arrowleft.png'
 function Carousel(props) {
 
     const [move,setMovement] = useState("")
+    const [clicked,setClick] = useState(false)
 
 
     let items = props.days.map((date, index) => {
@@ -12,24 +13,32 @@ function Carousel(props) {
     })
 
     function moveLeft() {
-        setMovement("left")
-        setTimeout(function() {
-            let date = new Date()
-            date.setDate(props.centerDate.getDate()+1)
-            props.handleDateChange(date)
-            setMovement("")
-        },2500)
+        if (clicked === false) {
+            setClick(true)
+            setMovement("left")
+            setTimeout(function() {
+                let date = new Date()
+                date.setDate(props.centerDate.getDate()+1)
+                props.handleDateChange(date)
+                setMovement("")
+                setClick(false)
+            },2000)
+        }
 
     }
 
     function moveRight() {
-        setMovement("right")
-        setTimeout(function() {
-            let date = new Date()
-            date.setDate(props.centerDate.getDate()-1)
-            props.handleDateChange(date)
-            setMovement("")
-        },2500)
+        if (clicked === false) {
+            setClick(true)
+            setMovement("right")
+            setTimeout(function() {
+                let date = new Date()
+                date.setDate(props.centerDate.getDate()-1)
+                props.handleDateChange(date)
+                setMovement("")
+                setClick(false)
+            },2000)
+        }
     }
 
     return (
