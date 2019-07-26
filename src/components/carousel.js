@@ -17,8 +17,8 @@ function Carousel(props) {
             setClick(true)
             setMovement("left")
             setTimeout(function() {
-                let date = new Date()
-                date.setDate(props.centerDate.getDate()+1)
+                let date = new Date(props.centerDate)
+                date.setDate(date.getDate()+1)
                 props.handleDateChange(date)
                 setMovement("")
                 setClick(false)
@@ -32,8 +32,8 @@ function Carousel(props) {
             setClick(true)
             setMovement("right")
             setTimeout(function() {
-                let date = new Date()
-                date.setDate(props.centerDate.getDate()-1)
+                let date = new Date(props.centerDate)
+                date.setDate(date.getDate()-1)
                 props.handleDateChange(date)
                 setMovement("")
                 setClick(false)

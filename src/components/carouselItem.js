@@ -10,7 +10,8 @@ function CarouselItem(props) {
     
     useEffect (function() {
         setLoading(true)
-        props.firebase.events().orderByChild("date").equalTo(props.date).on('value', snapshot => {
+        let ref = props.firebase.events().orderByChild("date").equalTo(props.date)
+        let onValueChange = ref.on('value', snapshot => {
             let dbEvents = snapshot.val()
             let ev = []
             if (dbEvents!=null) {
@@ -21,6 +22,9 @@ function CarouselItem(props) {
             setEvents(ev.slice(0,2))
             setLoading(false)
         })
+        return function() {
+            ref.off('value', onValueChange)
+        }
     },[props.date])
 
 

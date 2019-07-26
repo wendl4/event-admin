@@ -56,7 +56,7 @@ function App(props) {
           value={date}
         />
       </div>
-      <DayDetail centerDate={parseDate(date)}/>
+      <DayDetail centerDate={parseDate(date)} />
     </div>
 
   )

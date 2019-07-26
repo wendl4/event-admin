@@ -7,7 +7,7 @@ function DayDetailItem(props) {
 
     const [edit, setEdit] = useState([false])
     const [name, setName] = useState(props.event.name)
-    const [date, setDate] = useState(props.event.date)
+    const [date, setDate] = useState(formatForInput(props.event.date))
     const [time, setTime] = useState(props.event.time)
     const [note, setNote] = useState(props.event.note)
 
@@ -16,9 +16,20 @@ function DayDetailItem(props) {
     const handleChangeTime = event => setTime(event.target.value)
     const handleChangeNote = event => setNote(event.target.value)
 
-
     function handleEdit() {
         setEdit(true)
+    }
+
+    function formatForInput(inputDate) {
+        let dateArray = inputDate.split("/")
+        if (dateArray[0].length === 1) dateArray[0] = `0${dateArray[0]}`
+        if (dateArray[1].length === 1) dateArray[1] = `0${dateArray[1]}`
+        return (`${dateArray[2]}-${dateArray[0]}-${dateArray[1]}`)
+    }
+
+    function formatForDb(inputDate) {
+        let formatedDate = inputDate.split("-")
+        return `${parseInt(formatedDate[1])}/${parseInt(formatedDate[2])}/${formatedDate[0]}`
     }
 
     function handleDelete() {
@@ -27,8 +38,8 @@ function DayDetailItem(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        let formatedDate = date.split("-")
-        formatedDate=`${parseInt(formatedDate[1])}/${parseInt(formatedDate[2])}/${formatedDate[0]}`
+        let formatedDate = formatForDb(date)
+
         props.firebase.event(props.event.id).update({
               name: name,
               date: formatedDate,
@@ -63,6 +74,7 @@ function DayDetailItem(props) {
                             className="formInput"
                             type="date"
                             name="date"
+                            value={date}
                             onChange={handleChangeDate}
                             id="date"
                             required
@@ -75,6 +87,7 @@ function DayDetailItem(props) {
                         </span>
                         <input
                             className="formInput"
+                            placeholder="00:00"
                             type="time"
                             name="time"
                             value={time}

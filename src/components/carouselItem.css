@@ -32,6 +32,7 @@
 
 .carouselMain {
     color: #a8dadc;
+    font-size: 25px;
     background-color: #ffffff;
     width: 300px;
     height: 150px;
@@ -52,6 +53,7 @@
     to {
         height: 100px;
         width: 200px;
+        font-size: 16px;
         opacity: 0.75;
         transform: translate(-240px);
     }
@@ -61,6 +63,7 @@
     to {
         height: 100px;
         width: 200px;
+        font-size: 16px;
         opacity: 0.75;
         -webkit-transform: translate(-240px);
     }
@@ -78,6 +81,7 @@
     to {
         height: 100px;
         width: 200px;
+        font-size: 16px;
         opacity: 0.75;
         transform: translate(240px);
     }
@@ -87,6 +91,7 @@
     to {
         height: 100px;
         width: 200px;
+        font-size: 16px;
         opacity: 0.75;
         -webkit-transform: translate(240px);
     }
@@ -105,6 +110,7 @@
     to {
         height: 150px;
         width: 300px;
+        font-size: 25px;
         opacity: 1;
         transform: translate(-240px);
     }
@@ -114,6 +120,7 @@
     to {
         height: 150px;
         width: 300px;
+        font-size: 25px;
         opacity: 1;
         -webkit-transform: translate(240px);
     }
@@ -131,6 +138,7 @@
     to {
         height: 150px;
         width: 300px;
+        font-size: 25px;
         opacity: 1;
         transform: translate(240px);
     }
@@ -140,6 +148,7 @@
     to {
         height: 150px;
         width: 300px;
+        font-size: 25px;
         opacity: 1;
         -webkit-transform: translate(240px);
     }

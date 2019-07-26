@@ -8,8 +8,11 @@ function DayDetail(props) {
     const [events, setEvents] = useState([])
 
     function handleAdd() {
-        let eventRef = props.firebase.events().push()
-        eventRef.set({date:props.centerDate, name:"defaultName"})
+        props.firebase.events().push().set({
+            date:props.centerDate,
+            time:'00:00',
+            name:"defaultName"
+        })
     }
     
     useEffect (function() {
@@ -27,8 +30,8 @@ function DayDetail(props) {
     },[props.centerDate, props.firebase])
 
     let displayedEvents = events.map(event =>
-        <div className="dayDetail">
-            <DayDetailItem event={event} key={event.id}/>
+        <div className="dayDetail" key={event.id}>
+            <DayDetailItem event={event} />
         </div>
     )
 
